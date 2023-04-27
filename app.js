@@ -1,6 +1,7 @@
 const { read } = require('./crud/read');
 const {create}=require('./crud/create');
 const {update}=require("./crud/update");
+const { deleteTitle } = require('./crud/delete');
 const data = process.argv;
 
 const comand = (comando, param1, param2) => {
@@ -14,10 +15,10 @@ const comand = (comando, param1, param2) => {
             //funcion para crear una tarea
             break;
         case "delete":
-            // funcion para eliminar una tarea
+            deleteTitle(param1);
             break;
         case "update":
-            console.log(update());
+          update(param1,param2);
         default:
             console.log("no se encontro ningun comando que conincida ");
             break;
